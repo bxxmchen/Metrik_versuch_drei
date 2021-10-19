@@ -64,6 +64,8 @@ public class CanvasController implements MouseListener {
                     g2d.fill(ellipse2D);
                     String string2 = ("X-Koordinate: " + x2 + ", Y-Koordinate: " + y2);
                     g2d.drawString(string2, 20,50);
+                    g2d.setColor(Color.RED);
+                    g2d.drawLine(x1,y1,x2,y2);
                     counter++;
                     break;
                 //third click, clear circle
