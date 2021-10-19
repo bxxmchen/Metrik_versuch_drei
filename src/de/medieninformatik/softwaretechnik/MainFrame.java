@@ -1,5 +1,6 @@
 package de.medieninformatik.softwaretechnik;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,11 +25,44 @@ public class MainFrame extends Frame implements ActionListener{
     public MainFrame(){
         setSize(850, 550);
         setVisible(true);
-        setTitle("Version 1.0");
+        setTitle("Version 1.2");
 
         addWindowListener(mainFrameController);
         add(customCanvas);
         customCanvas.addMouseListener(canvasController);
+
+        MenuBar bar = new MenuBar();
+        Menu menuHg = new Menu("Hintergrund");
+
+        MenuItem bgWhite = new MenuItem("Weiß");
+        //changes background color to white
+        bgWhite.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customCanvas.changeBackground(Color.WHITE);
+            }
+        });
+        MenuItem bgDarkgray = new MenuItem("Dunkelgrau");
+        //changes background color to darkgray
+        bgDarkgray.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customCanvas.changeBackground(Color.DARK_GRAY);
+            }
+        });
+        MenuItem bgBlack = new MenuItem("Schwarz");
+        //changes background color to black
+        bgBlack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customCanvas.changeBackground(Color.BLACK);
+            }
+        });
+        menuHg.add(bgWhite);
+        menuHg.add(bgDarkgray);
+        menuHg.add(bgBlack);
+        bar.add(menuHg);
+        setMenuBar(bar);
 
     }
 
