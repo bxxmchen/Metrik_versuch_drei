@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
  * date: 19.10.2021
  *
  * The class MainFrame is responsible for the frame of the application.
+ * https://github.com/bxxmchen/Metrik_versuch_drei
  */
 
 public class MainFrame extends Frame implements ActionListener{

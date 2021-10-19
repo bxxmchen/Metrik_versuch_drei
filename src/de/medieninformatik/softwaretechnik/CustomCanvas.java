@@ -8,6 +8,7 @@ import java.awt.*;
  * date: 19.10.2021
  *
  * The class CustomCanvas sets the size and the background color.
+ * https://github.com/bxxmchen/Metrik_versuch_drei
  */
 
 public class CustomCanvas extends Canvas {

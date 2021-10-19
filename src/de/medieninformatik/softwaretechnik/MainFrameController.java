@@ -9,6 +9,7 @@ import java.awt.event.WindowListener;
  * date: 19.10.2021
  *
  * The class MainFrameController is for closing the window.
+ * https://github.com/bxxmchen/Metrik_versuch_drei
  */
 
 public class MainFrameController implements WindowListener {
