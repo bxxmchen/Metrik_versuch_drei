@@ -20,6 +20,13 @@ public class CanvasController implements MouseListener {
     Canvas canvas;
     Font font = new Font("Arial", Font.ITALIC, 20);
 
+    float r = 40.0F;
+
+    public float getRadius(float kr){
+        r = kr;
+        return r;
+    }
+
     /**
      * The method mouseClicked counts the amount of mouse clicks and draws the circles.
      * Furthermore it draws the string with the coordinates.
@@ -43,7 +50,7 @@ public class CanvasController implements MouseListener {
                 case 0:
                     x1 = e.getX();
                     y1 = e.getY();
-                    ellipse2D = new Ellipse2D.Float(x1-20.0F, y1-20.0F, 40.0F, 40.0F);
+                    ellipse2D = new Ellipse2D.Float((float) (x1-(0.5*r)), (float) (y1-(0.5*r)), r, r);
                     g2d.fill(ellipse2D);
                     String string1 = ("X-Koordinate: " + x1 + ", Y-Koordinate: " + y1);
                     g2d.drawString(string1, 20,25);
@@ -53,7 +60,7 @@ public class CanvasController implements MouseListener {
                 case 1:
                     x2 = e.getX();
                     y2 = e.getY();
-                    ellipse2D = new Ellipse2D.Float(x2-20.0F, y2-20.0F, 40.0F, 40.0F);
+                    ellipse2D = new Ellipse2D.Float((float) (x2-(0.5*r)), (float) (y2-(0.5*r)), r, r);
                     g2d.fill(ellipse2D);
                     String string2 = ("X-Koordinate: " + x2 + ", Y-Koordinate: " + y2);
                     g2d.drawString(string2, 20,50);

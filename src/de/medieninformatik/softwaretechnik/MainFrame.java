@@ -19,6 +19,8 @@ public class MainFrame extends Frame implements ActionListener{
     CanvasController canvasController = new CanvasController();
     CustomCanvas customCanvas = new CustomCanvas();
 
+    float kr;
+
     /**
      * The constructor of the class MainFrame sets the size, the title and the visibility.
      */
@@ -33,6 +35,16 @@ public class MainFrame extends Frame implements ActionListener{
 
         MenuBar bar = new MenuBar();
         Menu menuHg = new Menu("Hintergrund");
+        Menu menuKr = new Menu("Kreisradius");
+
+        MenuItem radius = new MenuItem("Eingeben");
+        radius.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                kr = Float.parseFloat(JOptionPane.showInputDialog("Bitte geben Sie den gewünschten Kreisradius ein.", 40));
+                canvasController.getRadius(kr);
+            }
+        });
 
         MenuItem bgWhite = new MenuItem("Weiß");
         //changes background color to white
@@ -62,6 +74,8 @@ public class MainFrame extends Frame implements ActionListener{
         menuHg.add(bgDarkgray);
         menuHg.add(bgBlack);
         bar.add(menuHg);
+        menuKr.add(radius);
+        bar.add(menuKr);
         setMenuBar(bar);
 
     }
