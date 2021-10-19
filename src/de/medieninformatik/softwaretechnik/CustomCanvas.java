@@ -19,4 +19,12 @@ public class CustomCanvas extends Canvas {
         setSize(850, 550);
         setBackground(Color.WHITE);
     }
+
+    /**
+     * The method changeBackground changes the background color.
+     * @param c color
+     */
+    public void changeBackground(Color c){
+        setBackground(c);
+    }
 }
