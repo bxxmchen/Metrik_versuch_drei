@@ -18,9 +18,11 @@ public class CanvasController implements MouseListener {
     int x1, x2, y1, y2;
     int counter = 0;
     Canvas canvas;
+    Font font = new Font("Arial", Font.ITALIC, 20);
 
     /**
      * The method mouseClicked counts the amount of mouse clicks and draws the circles.
+     * Furthermore it draws the string with the coordinates.
      * @param e event
      */
     @Override
@@ -30,6 +32,7 @@ public class CanvasController implements MouseListener {
         Ellipse2D ellipse2D;
         Graphics2D g2d = (Graphics2D)g;
         g2d.setColor(Color.ORANGE);
+        g2d.setFont(font);
 
         //in case of a double click
         if (e.getClickCount()==2){
@@ -42,6 +45,8 @@ public class CanvasController implements MouseListener {
                     y1 = e.getY();
                     ellipse2D = new Ellipse2D.Float(x1-20.0F, y1-20.0F, 40.0F, 40.0F);
                     g2d.fill(ellipse2D);
+                    String string1 = ("X-Koordinate: " + x1 + ", Y-Koordinate: " + y1);
+                    g2d.drawString(string1, 20,25);
                     counter++;
                     break;
                 //second click, second circle
@@ -50,6 +55,8 @@ public class CanvasController implements MouseListener {
                     y2 = e.getY();
                     ellipse2D = new Ellipse2D.Float(x2-20.0F, y2-20.0F, 40.0F, 40.0F);
                     g2d.fill(ellipse2D);
+                    String string2 = ("X-Koordinate: " + x2 + ", Y-Koordinate: " + y2);
+                    g2d.drawString(string2, 20,50);
                     counter++;
                     break;
                 //third click, clear circle
